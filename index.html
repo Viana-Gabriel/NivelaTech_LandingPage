@@ -369,41 +369,54 @@
 
   <script>
 
-    const form = document.getElementById("feedbackForm");
-    const loader = document.getElementById("loader");
+const form = document.getElementById("feedbackForm");
+const loader = document.getElementById("loader");
+const btn = document.getElementById("submitBtn");
 
-    form.addEventListener("submit", async function (e) {
+let isSending = false;
 
-      e.preventDefault();
+form.addEventListener("submit", async function (e) {
 
-      loader.classList.remove("hidden");
+  e.preventDefault();
 
-      const data = {
-        nome: form.nome.value,
-        email: form.email.value,
-        agricultura: form.agricultura.value,
-        desafio: form.desafio.value
-      };
+  if (isSending) return;
 
-      try {
+  isSending = true;
 
-        await fetch("https://script.google.com/macros/s/AKfycbybH9D9P7XmHF9WIww7y5yEIvbZ_fllcNZRf1RiZnD45VO4dRSrqo4CntKohRWsYOUyAA/exec", {
-          method: "POST",
-          body: JSON.stringify(data)
-        });
+  loader.classList.remove("hidden");
+  btn.disabled = true;
+  btn.classList.add("opacity-50","cursor-not-allowed");
 
-        window.location.href = "/thanks.html";
+  const data = {
+    nome: form.nome.value,
+    email: form.email.value,
+    agricultura: form.agricultura.value,
+    desafio: form.desafio.value
+  };
 
-      } catch (error) {
+  try {
 
-        alert("Erro ao enviar. Tente novamente.");
-
-        loader.classList.add("hidden");
-
-      }
-
+    await fetch("https://script.google.com/macros/s/AKfycbybH9D9P7XmHF9WIww7y5yEIvbZ_fllcNZRf1RiZnD45VO4dRSrqo4CntKohRWsYOUyAA/exec", {
+      method: "POST",
+      body: JSON.stringify(data)
     });
-  </script>
+
+    window.location.href = "/thanks.html";
+
+  } catch (error) {
+
+    alert("Erro ao enviar. Tente novamente.");
+
+    loader.classList.add("hidden");
+    btn.disabled = false;
+
+    isSending = false;
+
+  }
+
+});
+
+</script>
 
 </body>
 
