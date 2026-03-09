@@ -319,7 +319,7 @@
 
         <input name="email" type="email" placeholder="Seu email" class="w-full border p-4 rounded-lg" />
 
-        <select  name="agricultura" class="w-full border p-4 rounded-lg">
+        <select name="agricultura" class="w-full border p-4 rounded-lg">
 
           <option>Você trabalha com agricultura?</option>
           <option>Sim</option>
@@ -327,7 +327,7 @@
 
         </select>
 
-        <textarea  name="desafio" placeholder="Qual seu maior desafio com máquinas agrícolas?"
+        <textarea name="desafio" placeholder="Qual seu maior desafio com máquinas agrícolas?"
           class="w-full border p-4 rounded-lg"></textarea>
 
         <button class="w-full bg-green-600 text-white py-4 rounded-lg font-semibold hover:bg-green-700">
@@ -351,31 +351,59 @@
 
   </footer>
 
+  <div id="loader" class="fixed inset-0 bg-white/80 backdrop-blur flex items-center justify-center hidden z-50">
+
+    <div class="flex flex-col items-center gap-4">
+
+      <div class="w-12 h-12 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
+
+      <p class="text-gray-700 font-medium">
+        Enviando feedback...
+      </p>
+
+    </div>
+
+  </div>
+
+
+
   <script>
 
-const form = document.getElementById("feedbackForm");
+    const form = document.getElementById("feedbackForm");
+    const loader = document.getElementById("loader");
 
-form.addEventListener("submit", async function(e) {
+    form.addEventListener("submit", async function (e) {
 
-  e.preventDefault();
+      e.preventDefault();
 
-  const data = {
-    nome: form.nome.value,
-    email: form.email.value,
-    agricultura: form.agricultura.value,
-    desafio: form.desafio.value
-  };
+      loader.classList.remove("hidden");
 
-  await fetch("https://script.google.com/macros/s/AKfycbybH9D9P7XmHF9WIww7y5yEIvbZ_fllcNZRf1RiZnD45VO4dRSrqo4CntKohRWsYOUyAA/exec", {
-    method: "POST",
-    body: JSON.stringify(data)
-  });
+      const data = {
+        nome: form.nome.value,
+        email: form.email.value,
+        agricultura: form.agricultura.value,
+        desafio: form.desafio.value
+      };
 
-  window.location.href = "/thanks.html";
+      try {
 
-});
+        await fetch("https://script.google.com/macros/s/AKfycbybH9D9P7XmHF9WIww7y5yEIvbZ_fllcNZRf1RiZnD45VO4dRSrqo4CntKohRWsYOUyAA/exec", {
+          method: "POST",
+          body: JSON.stringify(data)
+        });
 
-</script>
+        window.location.href = "/thanks.html";
+
+      } catch (error) {
+
+        alert("Erro ao enviar. Tente novamente.");
+
+        loader.classList.add("hidden");
+
+      }
+
+    });
+  </script>
 
 </body>
 
