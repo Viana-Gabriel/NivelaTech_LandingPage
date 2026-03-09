@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NivelaTech</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .hero-bg {
+      background: radial-gradient(circle at 90% 20%, #bef264, #ffffff 40%);
+    }
+  </style>
+
+</head>
+
+<body class="bg-white text-gray-800">
+
+
+  <!-- NAVBAR -->
+
+  <header class="fixed top-0 w-full backdrop-blur bg-white/70 border-b z-50">
+
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
+      <h1 class="font-bold text-xl text-green-600">
+        NivelaTech
+      </h1>
+
+      <nav class="flex gap-6 text-sm">
+
+        <a href="#problema" class="hover:text-green-600">Problema</a>
+        <a href="#solucao" class="hover:text-green-600">Solução</a>
+        <a href="#demo" class="hover:text-green-600">Sistema</a>
+        <a href="#feedback" class="hover:text-green-600">Feedback</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero-bg min-h-screen flex items-center pt-24 px-6">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+      <div>
+
+        <p class="bg-green-100 text-green-700 inline-block px-4 py-1 rounded-full text-sm mb-6">
+          AgTech • Agricultura Inteligente
+        </p>
+
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+
+          Transforme terrenos irregulares em
+
+          <span class="text-green-600">
+            maior produtividade
+          </span>
+
+        </h1>
+
+        <p class="text-xl text-gray-600 mb-8">
+
+          O NivelaTech utiliza sensores e automação para adaptar
+          implementos agrícolas automaticamente ao terreno,
+          reduzindo perdas e aumentando a eficiência no campo.
+
+        </p>
+
+        <div class="flex gap-4">
+
+          <a href="#demo" class="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700">
+
+            Ver demonstração
+
+          </a>
+
+          <a href="#feedback" class="border border-gray-300 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100">
+
+            Enviar feedback
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- MOCK DASHBOARD -->
+
+      <div class="bg-white rounded-2xl shadow-2xl p-6 border">
+
+        <div class="flex justify-between mb-6">
+
+          <h3 class="font-semibold">
+            Monitoramento da Máquina
+          </h3>
+
+          <span class="text-green-600 text-sm">
+            Sistema ativo
+          </span>
+
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+
+          <div class="bg-gray-100 p-4 rounded-lg">
+
+            <p class="text-sm text-gray-500">Eficiência</p>
+            <p class="text-3xl font-bold">+18%</p>
+
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg">
+
+            <p class="text-sm text-gray-500">Nivelamento</p>
+            <p class="text-3xl font-bold">92%</p>
+
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg">
+
+            <p class="text-sm text-gray-500">Perda estimada</p>
+            <p class="text-3xl font-bold text-red-500">-12%</p>
+
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg">
+
+            <p class="text-sm text-gray-500">Terreno</p>
+            <p class="text-3xl font-bold">Irregular</p>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- PROBLEMA -->
+
+  <section id="problema" class="bg-gray-100 py-28 px-6">
+
+    <div class="max-w-6xl mx-auto text-center">
+
+      <h2 class="text-4xl font-bold mb-6">
+        O problema no campo
+      </h2>
+
+      <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
+
+        Terrenos irregulares fazem com que colheitadeiras e
+        plantadeiras não acompanhem corretamente o solo,
+        gerando perdas significativas durante a operação.
+
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <div class=" bg-white p-8 border rounded-xl">
+
+          <h3 class="font-bold mb-3 text-lg">
+            Perda de produção
+          </h3>
+
+          <p class="text-gray-600">
+            Parte da colheita acaba ficando no solo
+            devido ao mau nivelamento.
+          </p>
+
+        </div>
+
+        <div class="bg-white p-8 border rounded-xl">
+
+          <h3 class="font-bold mb-3 text-lg">
+            Operação ineficiente
+          </h3>
+
+          <p class="text-gray-600">
+            Operadores precisam compensar manualmente
+            falhas do equipamento.
+          </p>
+
+        </div>
+
+        <div class="bg-white p-8 border rounded-xl">
+
+          <h3 class="font-bold mb-3 text-lg">
+            Tecnologia cara
+          </h3>
+
+          <p class="text-gray-600">
+            Sistemas automáticos estão disponíveis
+            apenas em máquinas novas.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SOLUÇÃO -->
+
+  <section id="solucao" class="py-28 px-6">
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+      <div>
+
+        <h2 class="text-4xl font-bold mb-6">
+          A solução: NivelaTech
+        </h2>
+
+        <p class="text-lg text-gray-600 mb-8">
+
+          Um kit inteligente de sensores e atuadores
+          que permite que implementos agrícolas se
+          adaptem automaticamente às irregularidades
+          do terreno em tempo real.
+
+        </p>
+
+        <ul class="space-y-4 text-lg">
+
+          <li>✔ Nivelamento automático</li>
+          <li>✔ Redução de perdas na colheita</li>
+          <li>✔ Compatível com máquinas existentes</li>
+          <li>✔ Instalação simples</li>
+
+        </ul>
+
+      </div>
+
+      <div class="bg-white shadow-xl rounded-2xl h-[350px] flex items-center justify-center">
+
+        <img src="./src/assets/ilustration.png" alt="">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- DEMO SISTEMA -->
+
+  <section id="demo" class=" bg-gray-100 py-28 px-6">
+
+    <div class="max-w-6xl mx-auto text-center">
+
+      <h2 class="text-4xl font-bold mb-14">
+        Interface do sistema
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="bg-white shadow-xl  rounded-xl flex items-center justify-center content-fill">
+          <img src="./src/assets/Dashboard.png" alt="">
+        </div>
+
+        <div class="bg-white shadow-xl rounded-xl flex items-center justify-center content-fill">
+           <img src="./src/assets/Monitor.png" alt="">
+        </div>
+
+        <div class="bg-white shadow-xl  rounded-xl flex items-center justify-center content-fill">
+           <img src="./src/assets/Relátorios.png" alt="">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- VALIDAÇÃO -->
+
+  <section id="feedback" class="bg-gray-50 py-28 px-6">
+
+    <div class="max-w-xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-6">
+        Nos ajude a validar essa ideia
+      </h2>
+
+      <p class="text-gray-600 text-center mb-10">
+
+        Seu feedback é essencial para entendermos melhor
+        as necessidades do campo.
+
+      </p>
+
+      <form action="thanks.html" class="space-y-5">
+
+        <input type="text" placeholder="Seu nome" class="w-full border p-4 rounded-lg" />
+
+        <input type="email" placeholder="Seu email" class="w-full border p-4 rounded-lg" />
+
+        <select class="w-full border p-4 rounded-lg">
+
+          <option>Você trabalha com agricultura?</option>
+          <option>Sim</option>
+          <option>Não</option>
+
+        </select>
+
+        <textarea placeholder="Qual seu maior desafio com máquinas agrícolas?"
+          class="w-full border p-4 rounded-lg"></textarea>
+
+        <button class="w-full bg-green-600 text-white py-4 rounded-lg font-semibold hover:bg-green-700">
+
+          Enviar feedback
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class=" bg-gray-100 py-10 text-center text-gray-500">
+
+    © 2026 NivelaTech • Agricultura Inteligente
+
+  </footer>
+
+
+</body>
+
+</html>
